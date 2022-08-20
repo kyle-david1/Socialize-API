@@ -1,12 +1,13 @@
 //schema only
-const { Schema } = require('mongoose');
+const { Schema, Types } = require('mongoose');
+const {format_date} = require('../utils/formatDate')
 
 //create Reaction schema
 const reactionSchema = new Schema({
   reactionId: { type:Schema.Types.ObjectId, default:() => new Types.ObjectId()},
   reactionBody: { type:String, required:true, maxlength:280},
   username: {type:String, required:true},
-  createdAt: { type: Date, default: Date.now, get: timestamp => SOMEFUNCTIONWILLGOHERELATER(timestamp) },
+  createdAt: { type: Date, default: Date.now, get: timestamp => format_date(timestamp) },
 },
   {
     toJSON: {

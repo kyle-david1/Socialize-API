@@ -1,11 +1,11 @@
 const { Schema, model } = require('mongoose');
-const { reactionSchema } = require('./Reaction');
-
+const  reactionSchema  = require('./Reaction');
+const {format_date} = require('../utils/formatDate')
 
 //create Thoughts schema
 const thoughtsSchema = new Schema({
   thoughtText: { type: String, required: true, minlength: 1, maxlength: 280 },
-  createdAt: { type: Date, default: Date.now, get: timestamp => SOMEFUNCTIONWILLGOHERELATER(timestamp) },
+  createdAt: { type: Date, default: Date.now, get: timestamp => format_date(timestamp) },
   username: { type: String, required: true },
   reactions:
     [reactionSchema],
