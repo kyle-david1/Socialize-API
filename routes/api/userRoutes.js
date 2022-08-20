@@ -15,7 +15,6 @@ router.route('/').get(getUsers).post(createUser);
 // /api/users/:userId
 router.route('/:userId').get(getSingleUser);
 
-module.exports = router;
 
 
 // get route for users
