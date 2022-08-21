@@ -1,4 +1,3 @@
-console.log('its running');
 const connection = require('../config/connection');
 const { User, Thoughts } = require('../models');
 const { user, thoughts } = require('./data');
@@ -19,7 +18,7 @@ connection.once('open', async () => {
   await Thoughts.collection.insertMany(thoughts);
 
   console.table(user);
-  console.info('Planted dem seeds!');
+  console.info('Planted los seeds!');
   process.exit(0);
 
 });

@@ -21,8 +21,11 @@ router.route('/:thoughtId').get(getSingleThought);
 router.route('/:thoughtId').get(getSingleThought).delete(deleteThought).put(updateThought);
 
 
+// return reactions associated with thoughts
+router.route('/thoughtId/reactions').post(addReaction);
 
-// delete route for Thoughts friend list 
+
+// once a reaction is created with an associated reaction id, delete the reaction by id
 router.route('/:thoughtId/reactions/:reactionId').post(addReaction).delete(deleteReaction);
 
 

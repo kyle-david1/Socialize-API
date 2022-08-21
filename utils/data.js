@@ -12,6 +12,10 @@ const thoughts = [
   { thoughtText: 'I dont even go here', username: 'bobbyMay' },
 ]
 
+const reactions = [
+  { reactionText: 'this makes me so happy'}
+]
+
 
 
 module.exports = { user, thoughts };

@@ -11,8 +11,7 @@ const reactionSchema = new Schema({
 },
   {
     toJSON: {
-       //use getters since there is get function in Schema ->createdAt
-      //default is virtuals
+       
       getters: true,
     },
     id: false,
@@ -20,12 +19,6 @@ const reactionSchema = new Schema({
 );
 
 
-// //create virtual property for reactions count
-// thoughtsSchema
-//   .virtual('reactionCount')
-//   .get(function () {
-//     return this.reactions.length;
-//   })
 
 
 module.exports = reactionSchema;
